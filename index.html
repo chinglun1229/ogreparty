@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+@keyframes round {
+  /* 100/10 =10%/1s */
+    10% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+    50% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1- 5秒靜止*/
+    }
+    60% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 5-6秒淡出*/
+    }
+}
+  .slider_container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.slider_container div{
+  width: 100%;
+  height:100%;
+}
+.slider_container img{
+  width: 100%;
+  height:100%;
+  Object-fit:cover;
+}
+.slider_container div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.slider_container div {
+  animation: round 10s linear infinite;
+}
+
+
+/* .slider_container div:nth-child(5) {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+}
+
+.slider_container div:nth-child(4) {
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+}
+
+.slider_container div:nth-child(3) {
+    -webkit-animation-delay: 10s;
+            animation-delay: 10s;
+} */
+
+.slider_container div:nth-child(2) {
+            animation-delay: 0s;
+}
+
+.slider_container div:nth-child(1) {
+            animation-delay: 5s;
+}
+#ogreparty{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+font-size: 120px;
+  -webkit-text-stroke: 5px black;
+    color: white;
+    /* text-shadow:
+       5px 5px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000; */
+}
+/* .slider_container span {    
+    color: #000;
+    background: #fff;
+    position: absolute;
+    left: 0%;
+    top: 280px;
+    width: 400px;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    -webkit-transform:scaleY(0);
+        -ms-transform:scaleY(0);
+            transform:scaleY(0);
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+} */
+
+/* .slider_container:hover span {
+    width: 100%;
+    -webkit-transform:scaleY(1);
+        -ms-transform:scaleY(1);
+            transform:scaleY(1);
+} */
+footer{
+  padding: 40px;
+  background: #ddd;
+  display: flex;
+}
+#party_map{
+  width: 50%;
+  padding: 0 15px 0 0;
+}
+#party_info{
+  width: 50%;
+}
+  </style>
+</head>
+<body>
+  <div class="slider_container">
+    <div>
+      <img src="images/S__58712068.jpg" alt="pure css3 slider" />
+    </div>
+    <div>
+      <img src="images/S__58712066.jpg" alt="pure css3 slider" />
+    </div>
+    <!-- <div>
+      <img src="https://dykt84bvm7etr.cloudfront.net/uploadfiles/772/banner/4A4arjpYkITC.jpg" alt="pure css3 slider" />
+      </div>
+    <div>
+      <img src="https://dykt84bvm7etr.cloudfront.net/uploadfiles/816/banner/gmsrLX9qce9L.jpg" alt="pure css3 slider" />
+      </div>
+    <div>
+      <img src="https://dykt84bvm7etr.cloudfront.net/uploadfiles/832/banner/JQiR7i4Neyna.jpg" alt="pure css3 slider" />
+    </div> -->
+  </div>
+  <!-- <div class="logo">
+    <img src="images/20191007-7c798244da9a4ceb9c90a36d4e1eabcb.jpg" alt="">
+  </div> -->
+  <h1 id="ogreparty">中間文字</h1>
+  <footer>
+    <div id="party_map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.774810107178!2d121.51950371537826!3d25.007766745495676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d64fc73edb%3A0x62275bc5d09e2fa0!2z5beo6a2U5rS-5bCN5qGM5LiK6YGK5oiy5bCI6LOj5bqX!5e0!3m2!1szh-TW!2stw!4v1570418540788!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    <div id="party_info">
+      <p>巨魔派對</p>
+      <p>電話:02 2922 7833</p>
+      <p>地址: 234新北市永和區福和路123號B1</p>
+      <p>營業時間:星期一~星期四 15:30~22:00<br>星期五~星期日 11:00~25:00</p>
+      <a href="https://www.facebook.com/LetsOgreParty/" target="_blank">粉絲團</a>
+    </div>
+  </footer>
+</body>
+</html>
