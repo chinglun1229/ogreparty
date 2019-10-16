@@ -81,16 +81,13 @@
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
-
 font-size: 120px;
   -webkit-text-stroke: 5px black;
     color: white;
-    /* text-shadow:
-       5px 5px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000; */
+    max-width: 500px;
+}
+#ogreparty img{
+  width: 100%;
 }
 /* .slider_container span {    
     color: #000;
@@ -127,16 +124,31 @@ footer{
 }
 #party_info{
   width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 19px;
+  line-height: 40px;
+}
+@media (max-width: 768px){
+  footer{
+    flex-direction: column;
+  }
+  #party_map{
+    width: 100%;
+  }
+  #party_info{
+    width: 100%;
+  }
 }
   </style>
 </head>
 <body>
   <div class="slider_container">
     <div>
-      <img src="images/S__58712068.jpg" alt="pure css3 slider" />
+      <img src="images/S__58712068.jpg" alt="巨魔派對" />
     </div>
     <div>
-      <img src="images/S__58712066.jpg" alt="pure css3 slider" />
+      <img src="images/S__58712066.jpg" alt="巨魔派對" />
     </div>
     <!-- <div>
       <img src="https://dykt84bvm7etr.cloudfront.net/uploadfiles/772/banner/4A4arjpYkITC.jpg" alt="pure css3 slider" />
@@ -151,13 +163,16 @@ footer{
   <!-- <div class="logo">
     <img src="images/20191007-7c798244da9a4ceb9c90a36d4e1eabcb.jpg" alt="">
   </div> -->
-  <h1 id="ogreparty">羅晧仁還錢</h1>
+  <!-- <h1 id="ogreparty">羅晧仁還錢</h1> -->
+  <div id="ogreparty">
+    <img src="images/logo.png" alt="">
+  </div>
   <footer>
     <div id="party_map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.774810107178!2d121.51950371537826!3d25.007766745495676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d64fc73edb%3A0x62275bc5d09e2fa0!2z5beo6a2U5rS-5bCN5qGM5LiK6YGK5oiy5bCI6LOj5bqX!5e0!3m2!1szh-TW!2stw!4v1570418540788!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </div>
     <div id="party_info">
-      <p>巨魔派對</p>
+      <p>巨魔派對桌上遊戲專賣店</p>
       <p>電話:02 2922 7833</p>
       <p>地址: 234新北市永和區福和路123號B1</p>
       <p>營業時間:星期一~星期四 15:30~22:00<br>星期五~星期日 11:00~25:00</p>
