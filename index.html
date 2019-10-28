@@ -9,6 +9,7 @@
   *{
     margin: 0;
     padding: 0;
+    font-family: "微軟正黑體",Arial, Helvetica, sans-serif;
   }
 @keyframes round {
   /* 100/10 =10%/1s */
@@ -28,10 +29,58 @@
         /* 5-6秒淡出*/
     }
 }
-  .slider_container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+#pc_nav{
+  width: 100%;
+  height: 80px;
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+#pc_nav ul{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+#pc_nav ul li{
+  list-style-type: none;
+}
+#pc_nav ul li a{
+  color: white;
+  text-decoration: none;
+  margin: 0 30px;
+  font-size: 25px;
+  font-weight: 700;
+  height: 100%;
+  display: block;
+  line-height: 80px;
+}
+#pc_nav ul li a:hover{
+  color:yellow;
+}
+#mobile_nav{
+  width: 50px;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 101;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+#mobile_nav span{
+  display: inline-block;
+  width: 90%;
+  height: 4px;
+  background: white;
+  transition: all .5s;
+}
+.slider_container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 .slider_container div{
   width: 100%;
@@ -43,11 +92,11 @@
   Object-fit:cover;
 }
 .slider_container div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 .slider_container div {
   animation: round 10s linear infinite;
@@ -81,10 +130,10 @@
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
-font-size: 120px;
+  font-size: 120px;
   -webkit-text-stroke: 5px black;
-    color: white;
-    max-width: 500px;
+  color: white;
+  max-width: 500px;
 }
 #ogreparty img{
   width: 100%;
@@ -129,6 +178,14 @@ footer{
   font-size: 19px;
   line-height: 40px;
 }
+@media (min-width: 769px){
+  #pc_nav{
+    right: 0;
+  }
+  #mobile_nav{
+    display: none;
+  }
+}
 @media (max-width: 768px){
   footer{
     flex-direction: column;
@@ -139,10 +196,56 @@ footer{
   #party_info{
     width: 100%;
   }
+  #pc_nav{
+    /* display: none; */
+    transition: all .5s;
+    width: 250px;
+    height: 100vh;
+    /* right: -250px; */
+  }
+  #pc_nav ul{
+    flex-direction: column;
+  }
+  .close_mobile_nav{
+    right: -250px;
+  }
+  .open_mobile_nav{
+    right: 0;
+  }
+  .open_menu{
+    justify-content: center;
+  }
+  .close_menu{
+    justify-content: space-between;
+  }
+  #mobile_nav.open_menu span:nth-child(1){
+    transform: rotate(-45deg);
+    margin-top: 4px;
+  }
+  #mobile_nav.open_menu span:nth-child(2){
+    display: none;
+  }
+  #mobile_nav.open_menu span:nth-child(3){
+    transform: rotate(45deg);
+    margin-top: -4px;
+  }
 }
   </style>
 </head>
 <body>
+  <nav id="pc_nav" class="close_mobile_nav">
+    <ul>
+      <li><a href="">關於巨魔派對</a></li>
+      <li><a href="">羅晧仁</a></li>
+      <li><a href="">活動賽事</a></li>
+      <li><a href="">聯絡巨魔派對</a></li>
+    </ul>
+  </nav>
+  <div id="mobile_nav" class="close_menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <div class="slider_container">
     <div>
       <img src="images/S__58712068.jpg" alt="巨魔派對" />
@@ -160,10 +263,6 @@ footer{
       <img src="https://dykt84bvm7etr.cloudfront.net/uploadfiles/832/banner/JQiR7i4Neyna.jpg" alt="pure css3 slider" />
     </div> -->
   </div>
-  <!-- <div class="logo">
-    <img src="images/20191007-7c798244da9a4ceb9c90a36d4e1eabcb.jpg" alt="">
-  </div> -->
-  <!-- <h1 id="ogreparty">羅晧仁還錢</h1> -->
   <div id="ogreparty">
     <img src="images/yzFpmCF.png" alt="">
   </div>
@@ -179,5 +278,15 @@ footer{
       <a href="https://www.facebook.com/LetsOgreParty/" target="_blank">粉絲團</a>
     </div>
   </footer>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script>
+  $('#mobile_nav').click(function(){
+    $('#pc_nav').toggleClass('open_mobile_nav close_mobile_nav')
+    $(this).toggleClass('open_menu close_menu')
+  })
+  </script>
 </body>
 </html>
